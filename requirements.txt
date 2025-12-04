@@ -1,0 +1,12 @@
+# VirtualProtect Inspector - Requirements
+# Author: Anubhav Gain <anubhavg@infopercept.com>
+#
+# No external dependencies required for core functionality.
+# The following are optional development dependencies:
+
+# Development dependencies (install with: pip install -r requirements.txt)
+# pytest>=6.0
+# pytest-cov>=2.0
+# black>=21.0
+# flake8>=3.9
+# mypy>=0.900

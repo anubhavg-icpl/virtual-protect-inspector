@@ -1,0 +1,86 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "virtual-protect-inspector"
+version = "1.0.0"
+description = "A toolkit for building VirtualProtect-based DEP bypass exploits"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Anubhav Gain", email = "anubhavg@infopercept.com"}
+]
+maintainers = [
+    {name = "Anubhav Gain", email = "anubhavg@infopercept.com"}
+]
+keywords = [
+    "security",
+    "exploit",
+    "rop",
+    "dep-bypass",
+    "virtualprotect",
+    "buffer-overflow",
+    "penetration-testing",
+    "security-research"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Education"
+]
+requires-python = ">=3.7"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "black>=21.0",
+    "flake8>=3.9",
+    "mypy>=0.900"
+]
+
+[project.scripts]
+vp-inspector = "vp_inspector.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/anubhavg-icpl/virtual-protect-inspector"
+Documentation = "https://github.com/anubhavg-icpl/virtual-protect-inspector#readme"
+Repository = "https://github.com/anubhavg-icpl/virtual-protect-inspector"
+Issues = "https://github.com/anubhavg-icpl/virtual-protect-inspector/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["vp_inspector*"]
+
+[tool.black]
+line-length = 100
+target-version = ['py37', 'py38', 'py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+
+[tool.mypy]
+python_version = "3.7"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
